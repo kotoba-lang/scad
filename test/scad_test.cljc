@@ -20,7 +20,7 @@
 
 (deftest namespace-loads
   (testing "the restored CLJC namespace loads"
-    (is (some? (the-ns 'scad)))))
+    (is (some? (find-ns 'scad)))))
 
 ;; --- parser.rs -------------------------------------------------------------
 
