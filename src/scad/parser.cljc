@@ -9,7 +9,7 @@
   union/difference/intersection groups, and zero-arg module def/call. Produces an
   AST of tagged maps (`{:type :sphere :r ...}` etc, mirroring the original
   `ScadNode` enum 1:1)."
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 ;; ---------------------------------------------------------------------------
 ;; Lexer
@@ -184,7 +184,7 @@
         [x y z]))))
 
 (defn- color-name->rgba [name]
-  (case (str/lower-case name)
+  (case (str/lower name)
     "red" [1.0 0.0 0.0 1.0]
     "green" [0.0 1.0 0.0 1.0]
     "blue" [0.0 0.0 1.0 1.0]
